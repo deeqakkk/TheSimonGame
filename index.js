@@ -1,22 +1,13 @@
-$(document).keypress(function () {
-     $("h1").text("Level 1");
-  
-});
+// Creating Random Patterns 
+var buttonColours = ["red", "blue", "green", "yellow"];
 
-$(".green").click(function () {
-    var audio = new Audio('sounds/green.mp3');
-    audio.play();
-});
-$("#red").click(function () {
-    var audio = new Audio('sounds/red.mp3');
-    audio.play();
-});
-$("#yellow").click(function () {
-    var audio = new Audio('sounds/yellow.mp3');
-    audio.play();
-     
-});
-$("#blue").click(function () {
-    var audio = new Audio('sounds/blue.mp3');
-    audio.play();
-});
+var gamePattern = [];
+
+function nextSequence() {
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
+}
+// Selecting random selected buttons and adding properties to them
+$("#"+randomChosenColour).fadeIn(100).fadeout(100).fadIn(100);
+var audio=new audio("sounds/"+randomChosenColour+".mp3");
